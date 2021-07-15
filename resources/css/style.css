@@ -1,0 +1,694 @@
+/*
+Color gray body: 868686
+light bar gray: efefef
+bottom light comment: dfdfdf
+*/
+
+/*--------------------------------------------*/
+/* BASIC SETUP */
+/*--------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --mainColor: #000;
+}
+
+html {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+} /* 이거를 float을 clear하려면 적어준다음에 이 클래스를 넣어준다*/
+
+
+
+/*--------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*--------------------------------------------*/
+
+.row {
+    max-width: 1140px; /* this would be the only absolute value with pixels. */
+    margin: 0 auto; /*top and bottom would be 0 and left right would be auto. it is same with {0 auto 0 auto} */
+}
+
+section {
+    padding: 80px 0;
+}
+
+
+
+/*------ HEADINGS ------*/
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 32px;
+    display: inline-block;
+    
+}
+
+h3 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #868686;
+}
+
+.h4-card {
+    margin-left: 60px;
+}
+
+h5 {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 80%;
+    font-weight: 400;
+    color: rgb(160, 160, 160);
+}
+
+
+/*--------------------------------------------*/
+/* TILT */
+/*--------------------------------------------*/
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1140px;
+    transform-style: preserve-3d;
+}
+
+.container .box {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    margin: 40px 10px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+.container .box::before {
+    content: 'BLAH';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 5em;
+    font-weight: 900;
+    color: #000;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .box::after {
+    content: 'PROJECT';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 5em;
+    font-weight: 900;
+    color: #000;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.container .box:hover::before,
+.container .box:hover::after
+{
+    opacity: 0.1;
+}
+
+.container .box .title
+{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #000;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+.container .box:hover .title
+{
+    top: 40px;
+    opacity: 1;
+}
+
+.container .box .view 
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,105px);
+    color: #fff;
+    /* background:#C13584; */
+    background:rgba(0, 0, 0, 0);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+    width: 550px;
+    height: 500px;
+}
+
+.container .box:hover .view
+{
+    bottom: 30px;
+    opacity: 0;
+}
+
+.container .box .circle
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    z-index: 10;
+    opacity: 1;
+    transform: translate3d(-50%,-50%,50px);
+}
+
+
+.container .box .thumbnail 
+{
+    position: absolute;
+    max-width: 490px;
+    top: 50%;
+    left: 50%;
+    max-width: 570px;
+    transition: 0.5s;
+    z-index: 11;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,55px);
+}
+
+.container .box:hover .thumbnail {
+    transform: translate3d(-50%,-50%,100px);
+}
+
+.container .box:nth-child(1) .circle,
+.container .box:nth-child(1) .view
+{
+    background:#F1171D;
+}
+
+.container .box:nth-child(2) .circle,
+.container .box:nth-child(2) .view
+{
+    background:#FEB31E;
+}
+
+.container .box:nth-child(3) .circle,
+.container .box:nth-child(3) .view
+{
+    background:#394B2E;
+}
+
+.container .box:nth-child(4) .circle,
+.container .box:nth-child(4) .view
+{
+    background:#13A1DF;
+}
+
+.container .box:nth-child(1)::before
+{content: 'El Mio';}
+.container .box:nth-child(1)::after
+{content: 'ROBOT';}
+
+.container .box:nth-child(2)::before
+{content: 'COMPANIO';}
+.container .box:nth-child(2)::after
+{content: 'SERVICE';}
+
+.container .box:nth-child(3)::before
+{content: 'HALL';}
+.container .box:nth-child(3)::after
+{content: 'VR';}
+
+.container .box:nth-child(4)::before
+{content: 'DREAM';}
+.container .box:nth-child(4)::after
+{content: 'FORCE';}
+
+/*------ PARAGRAPHS ------*/
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+/*------ ICONS ------*/
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #000;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #000;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px; 
+    
+}
+
+.svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 24px;
+}
+
+
+span
+{
+  display: block;
+  width: 5px;
+  height: 5px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+   
+  border-right: 2px solid rgb(100, 100, 100);
+  border-bottom: 2px solid rgb(100, 100, 100);
+  margin: 0 0 3px 5px;
+}
+
+.unu
+{
+  margin-top: 6px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+}
+
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+}
+
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+}
+
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+}
+
+
+
+
+.mouse
+{
+height: 21px;
+width: 14px;
+  border-radius: 10px;
+  transform: none;
+  border: 2px solid rgb(100, 100, 100);
+  top: 170px;
+}
+
+.wheel
+{
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: rgb(100, 100, 100);
+  position: relative;
+}
+
+.wheel
+{
+  -webkit-animation: mouse-wheel 1.2s ease infinite;
+  -moz-animation: mouse-wheel 1.2s ease infinite;
+}
+
+@-webkit-keyframes mouse-wheel
+{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@-moz-keyframes mouse-wheel
+{
+  0% { top: 1px; }
+  50% { top: 2px; }
+  100% { top: 3px;}
+}
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+
+
+/*------ LINKS ------*/
+
+a:link,
+a:visited {
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 1px;
+    /*border-bottom: 1px solid #fff;*/
+    /*transition: border-bottom 0.2s, color 0.2s;*/
+}
+
+a:hover,
+a:active {
+    color: #000;
+    /*border-bottom: 1px solid transparent;*/
+    
+}
+
+/*------ BUTTONS ------*/
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 2px solid #000;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #000;
+    margin-right: 15px;
+    color: #000;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color: #000;
+}
+
+.btn:hover,
+.brn:active {
+    background-color: #000;
+    border: 2px solid #000;
+    color: #000;
+}
+
+/*--------------------------------------------*/
+/* HEADER */
+/*--------------------------------------------*/
+
+header {
+    background-image: #000;
+    background-size: cover;
+    background-position: center;
+    height: 740px; /*100% of the viewport*/
+}
+
+
+a.home {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 24px;
+    width: auto;
+    float: left;
+    margin-bottom: 112px;
+}
+
+.main-nav {
+    margin-top: 48px;
+    float: right;
+    font-weight: 500;
+    font-size: 100%;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 48px;
+}
+
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent; /*It has to be here before we make in hover state*/
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #000;
+}
+
+.introduction {
+    text-align: center;
+    margin-bottom: 52px;
+}
+/*--------------------------------------------*/
+/* PROJECT LIST */
+/*--------------------------------------------*/
+
+.overlay-text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.project-box {
+    -webkit-transform: scale(1.00);
+    transform: scale(1.00);
+    width: 100%;
+    height: 550px;
+    background: #000;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-size: 100%; */
+    background-size: cover;
+}
+
+.project-link:hover .overlay-text {
+    opacity: 1;
+}
+.project-link:hover .project-box {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);  
+}
+
+.project-header {
+    padding: 40px 0px 0px 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 130%;
+    letter-spacing: 0.4px;
+}
+
+.project-description {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 95%;
+    font-weight: 300;
+}
+
+.project-01 {
+    background-image: url(img/elmio.jpg);
+    background-position-x: center;
+    background-position-y: 40%;
+}
+
+.project-02 {
+    background-image: url(img/hall.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.project-03 {
+    background-image: url(img/connext.jpg);
+    background-position: center;
+}
+
+.project-04 {
+    background-image: url(img/salesforce.jpg);
+    background-position: center;
+}
+
+
+/*--------------------------------------------*/
+/* FOOTER */
+/*--------------------------------------------*/
+
+footer {
+    border-top: 0.5px solid #efefef;;
+    padding: 50px;
+    font-size: 120%;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-links li:last-child {
+    margin: 0;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;  /*a:link option delete*/
+    color: #999;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%
+    
+}
+
+.ion-social-linkedin,
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-linkedin:hover {
+    color: #0276a8;
+}
+
+.ion-social-instagram:hover {
+    color: #C13584;
+}
+
+footer p {
+    color: #ddd;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 80%;
+    font-weight: 200;
+}
+

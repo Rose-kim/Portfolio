@@ -1,0 +1,548 @@
+/*
+Color #3D66FF
+*/
+
+/*--------------------------------------------*/
+/* BASIC SETUP */
+/*--------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --mainColor: rgb(255, 255, 255);
+}
+
+html {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+} /* 이거를 float을 clear하려면 적어준다음에 이 클래스를 넣어준다*/
+
+
+/*--------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*--------------------------------------------*/
+
+.row {
+    max-width: 1140px; /* this would be the only absolute value with pixels. */
+    margin: 0 auto; /*top and bottom would be 0 and left right would be auto. it is same with {0 auto 0 auto} */
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+.content-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr .solid {
+    border-top: 1px solid #616161;
+}
+
+/*------ HEADINGS ------*/
+
+
+h1 {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 72px;
+    
+}
+
+h2 {
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 42px;
+}
+
+h3{
+    width: 100%;
+    font-weight: 500;
+    font-size: 34px;
+    display: block;
+    margin-bottom: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+h2:after {
+    display: block;
+    height: 1px;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #868686;
+}
+.h6-card {
+    margin-left: 66px;
+}
+/*------ PARAGRAPHS ------*/
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+p {
+    font-size: 100%;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+.p-italic {
+    font-style: italic;
+    font-size: 70%;
+}
+/*------ IMG ------*/
+
+img {
+    width: 100%;
+}
+
+.video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*------ ICONS ------*/
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #000;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #000;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px; 
+    
+}
+.svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.svg-icon-hall {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+    padding-top:20px;
+    margin-left: 20px;
+}
+/*------ LINKS ------*/
+
+a:link,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 1px;
+    /*border-bottom: 1px solid #fff;*/
+    /*transition: border-bottom 0.2s, color 0.2s;*/
+}
+
+a:hover,
+a:active {
+    color: #fff;
+    /*border-bottom: 1px solid transparent;*/
+    
+}
+
+/*------ BUTTONS ------*/
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 2px solid #fff;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #000;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color: #fff;
+}
+
+.btn:hover,
+.brn:active {
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/*--------------------------------------------*/
+/* HEADER */
+/*--------------------------------------------*/
+
+.workheader {
+    height: 50vh; /* height: 65vh;   50% of the viewport*/
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: 0;
+    background-repeat: no-repeat;
+}
+
+.header-elmio{
+    background-image: url(img/elmio/main.jpg);
+    
+}
+
+.header-hall {
+    background-image: url(img/hall/header.jpg);
+}
+
+.header-connext {
+    background-image: url(img/connext/main.jpg);
+}
+
+.header-companio {
+    background-image: url(img/companio/main.jpg);
+}
+
+.header-hall {
+    
+}
+
+header {
+    background-image: #fff;
+    background-size: cover;
+    background-position: center;
+    height: 740px; /*100% of the viewport*/
+}
+
+
+a.home {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 24px;
+    width: auto;
+    float: left;
+    margin-bottom: 112px;
+    height: 40px;
+}
+
+.main-nav {
+    margin-top: 48px;
+    float: right;
+    font-weight: 500;
+    font-size: 100%;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 48px;
+}
+
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent; /*It has to be here before we make in hover state*/
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
+}
+
+/* Sticky navi */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 2px #3a3a3a;
+    z-index: 9999;
+}
+
+.sticky .main-nav {
+    margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 15px 0px;
+}
+.sticky a.home {
+    margin-top: 15px;
+}
+/*--------------------------------------------*/
+/* SECTION BRIEF */
+/*--------------------------------------------*/
+
+.video {
+    width: 100%;
+    padding-top: 5%;
+}
+.project-name{
+    color: #fff;
+    font-size: 1000%;
+    float: left;
+    font-weight: 700;
+    display:block;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.project-name-longer{
+    color: #fff;
+    font-size: 700%;
+    float: left;
+    font-weight: 700;
+    display:block;
+    width: 100%;
+    margin-right: 10px;
+}
+.project-brief-video{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.project-description-big {
+    display:block;
+    width: 100%;
+    padding-bottom:8px;
+    border-bottom: solid 2px rgb(32, 32, 32);
+}
+.project-description-small {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.project-description-small:after{
+    border-bottom: solid 2px rgb(32, 32, 32);
+}
+
+.project-description-small p {
+    font-size: 90%;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.connext-video {
+    height: 580px;
+}
+.drawingbook-video {
+    height: 1300px;
+}
+
+
+
+/*--------------------------------------------*/
+/* SECTION INTRO */
+/*--------------------------------------------*/
+
+.section-introduction {
+    background-color: #000;
+    margin-bottom: 10px;
+}
+
+.section-introduction img {
+    width: 100%;
+}
+.section-introduction h2 {
+    font-size: 300%;
+    padding-bottom: 40px;
+}
+
+.section-introduction h2:after {
+    
+        display: block;
+        height: 2px;
+        background-color: rgb(32, 32, 32);
+        content: " "; /*pseudo code, you need to specify the content.*/
+        width: 100px;
+        margin-left: 0;
+        /* margin-top: 40px;
+        margin-bottom: 30px; */
+    
+    
+}
+.section-introduction p {
+    line-height: 1.3;
+    font-size: 90%;
+    font-weight: 400;
+    width: 100%;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+}
+
+.intro-right {
+    display: block;
+    padding-right:2%;
+}
+
+.companio-gif {
+    width: 1280px;
+}
+
+/*--------------------------------------------*/
+/* SECTION CHALLENGE */
+/*--------------------------------------------*/
+
+.section-challenge {
+    background-color: #1d1d1d;
+}
+/*--------------------------------------------*/
+/* SECTION USER */
+/*--------------------------------------------*/
+
+
+
+
+
+.section-white p {
+    bottom: 20px;
+}
+
+.section-white h3 {
+    top: 30px;
+}
+.bottom-text {
+    bottom: 40px;
+    left: 40px;
+}
+    
+/*--------------------------------------------*/
+/* FOOTER */
+/*--------------------------------------------*/
+footer {
+    border-top: 0.5px solid #efefef;;
+    padding: 50px;
+    font-size: 120%;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-links li:last-child {
+    margin: 0;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;  /*a:link option delete*/
+    color: #999;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%
+    
+}
+
+.ion-social-linkedin,
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-linkedin:hover {
+    color: #0276a8;
+}
+
+.ion-social-instagram:hover {
+    color: #C13584;
+}
+
+footer p {
+    color: #ddd;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 80%;
+    font-weight: 200;
+}
