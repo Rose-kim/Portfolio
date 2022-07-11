@@ -893,6 +893,16 @@ a {
   background-repeat: no-repeat;
 }
 
+.jumpboard-thumbnail {
+  height: 530px;
+  padding-top: 16px;
+  padding-left: 24px;
+  background-image: url('../images/Jumpboard-main.png');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .grid-4 {
   -ms-grid-rows: auto auto auto;
   grid-template-rows: auto auto auto;
@@ -1477,6 +1487,20 @@ a {
   font-size: 12px;
 }
 
+.current-work {
+  display: inline-block;
+  margin-right: 24px;
+  padding: 2px 24px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c5d9ec;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #006fcd;
+  font-size: 16px;
+  font-weight: 300;
+}
+
 .playground-list-timeline {
   color: #868686;
   font-size: 12px;
@@ -1886,6 +1910,10 @@ a {
     height: 600px;
   }
 
+  .jumpboard-thumbnail {
+    height: 600px;
+  }
+
   .text-grid-small-magin {
     max-width: 100%;
   }
@@ -2212,6 +2240,10 @@ a {
     height: 320px;
   }
 
+  .jumpboard-thumbnail {
+    height: 320px;
+  }
+
   .container-1200-light {
     max-width: 700px;
   }
@@ -2511,6 +2543,12 @@ a {
   }
 
   .vita-thumbnail {
+    height: 300px;
+    padding-top: 8px;
+    padding-left: 16px;
+  }
+
+  .jumpboard-thumbnail {
     height: 300px;
     padding-top: 8px;
     padding-left: 16px;
