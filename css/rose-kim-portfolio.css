@@ -35,6 +35,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 .heading {
@@ -42,8 +43,9 @@ a {
   margin-bottom: 72px;
   font-family: Inter, sans-serif;
   color: #000;
-  font-size: 42px;
-  line-height: 130%;
+  font-size: 30px;
+  line-height: 150%;
+  font-weight: 400;
 }
 
 .typer {
@@ -79,11 +81,12 @@ a {
 .container {
   position: -webkit-sticky;
   position: sticky;
-  max-width: 1440px;
+  max-width: 900px;
   margin-bottom: 16px;
-  padding-right: 32px;
+  margin-top: 80px;
+  padding-right: 40px;
   padding-bottom: 0px;
-  padding-left: 32px;
+  padding-left: 40px;
 }
 
 .container.container-playground {
@@ -1804,7 +1807,7 @@ a {
   }
 
   .container-1200 {
-    max-width: 1200px;
+    max-width: 800px;
     margin-top: 40px;
     background-color: #070707;
   }
